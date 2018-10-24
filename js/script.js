@@ -4,27 +4,45 @@
 var globalAnswerChoices;
 
 
-//handles class change of answer choices when selected
+//higlights selected answer green when user clicks on it.
 function handleAnswerSelect(event) {
     var selectedAnswer = event.target;
-    selectedAnswer.setAttribute('class', 'answer-item-selected');
-    console.log(event.target);
 
-  for (var i = 0; i < globalAnswerChoices.length; i++) {
+    //stores full list element (ul) for active question
+    var activeQuestion = selectedAnswer.parentNode;
+    //stores nodelist of active question
+    var activeQuestionChoices = activeQuestion.children;
+    console.log(activeQuestionChoices);
+    //checks for and deselects (if found) previously selected answer choice within question clicked.
 
-        if (i === event.target.id) {
-                continue;
-              }
+    for (var i = 0; i < activeQuestionChoices.length; i++)  {
 
-              else if (globalAnswerChoices[i].className = 'answer-item-selected') {
+          if (activeQuestionChoices[i].className = "answer-item-selected") {
 
-              var alreadySelected = globalAnswerChoices[i];
-              alreadySelected.setAttribute('class', 'answer-item');
+              var previousSelection = activeQuestionChoices[i];
+              previousSelection.setAttribute("class", "answer-item");
 
+            }
           }
-        }
-      }
-//Onload, gets answer elements and attaches listener to each one.
+
+      selectedAnswer.setAttribute("class", "answer-item-selected");
+
+    }
+
+  // for (var i = 0; i < activeQuestionChoices.length; i++) {
+  //
+  //       // if (i === selectedAnswer.id)
+  //       //   {continue;}
+  //
+  //           if (activeQuestionChoices[i].className = "answer-item-selected") {
+  //
+  //             var previousSelection = activeQuestionChoices[i];
+  //             previousSelection.setAttribute("class", "answer-item");
+  //
+  //         }
+      //  }
+
+//Onload, gets and attaches a listener to each answer choice element on page.
 
 function onLoad() {
   var el = document.getElementsByClassName("answer-item");
@@ -38,5 +56,6 @@ function onLoad() {
 
     }
   }
+  //console.log(globalAnswerChoices)
 }
 window.addEventListener('load', onLoad)
