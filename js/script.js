@@ -112,7 +112,7 @@ function handleAnswerSelect(event) {
 
       case "c7":
 
-        question6.choices = [0,0,0,0,0,0];
+        question7.choices = [0,0,0,0,0,0];
 
           if (question7.choices[selectedAnswer.id] === 0) {
           question7.choices[selectedAnswer.id]++;
