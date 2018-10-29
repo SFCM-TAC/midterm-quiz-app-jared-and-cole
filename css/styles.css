@@ -1,11 +1,8 @@
 
-h1 {
-  text-align: center;
-
-}
 
 body {
 
+text-align: center;
 background-color: #c9e5e3;
 font-family: Georgia, serif;
 
@@ -22,6 +19,8 @@ font-family: Georgia, serif;
   display: flex;
   /*-webkit-flex-flow: row wrap;*/
   justify-content: space-around;
+  align-items: center;
+
 }
 
 .answer-item {
