@@ -8,6 +8,15 @@ var activeQuestion;
 var selectedAnswer;
 var activeQuestionChoices;
 
+//result counter variables
+
+var obiWan;
+var thor;
+var wonder;
+var totoro;
+var bDay;
+var coffee;
+
 
 function Question() {
 
@@ -51,7 +60,6 @@ function handleAnswerSelect(event) {
       activeQuestion.id
 
 
-
     }
 
     switch (activeQuestion.id) {
@@ -63,6 +71,7 @@ function handleAnswerSelect(event) {
             if (question1.choices[selectedAnswer.id] === 0) {
               question1.choices[selectedAnswer.id]++;
             }
+
       break;
 
       case "c2":
@@ -81,6 +90,7 @@ function handleAnswerSelect(event) {
           if (question3.choices[selectedAnswer.id] === 0) {
             question3.choices[selectedAnswer.id]++;
             }
+
       break;
 
       case "c4":
@@ -119,12 +129,28 @@ function handleAnswerSelect(event) {
             }
       break;
 
+
+
+      //trigger function getResult() when sum of counters = 7
+
+
+
     }
 }
   // console.log(activeQuestion);
 
 
 
+/*removes all dom elements except the first div.
+Replaces the contents of this div the correct result page (text and image).*/
+
+// function getResult() {
+//
+//
+//
+//
+//
+// }
 
 //Onload, gets and attaches a listener to each answer choice element on page.
 
@@ -139,6 +165,9 @@ function onLoad() {
         el[i].addEventListener('click', handleAnswerSelect);
     }
   }
+
+
+
   //console.log(globalAnswerChoices)
 }
 
